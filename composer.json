@@ -1,0 +1,12 @@
+{
+    "name": "emmis/cloud-services-assignment2",
+    "description": "Assignment 2 in the course cloud services at malmo university",
+    "type": "assignment",
+    "authors": [
+        {
+            "name": "emmaindal",
+            "email": "emma.indahl@gmail.com"
+        }
+    ],
+    "require": {}
+}
