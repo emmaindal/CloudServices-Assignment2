@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Product;
-use App\ProductStore;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
@@ -34,7 +33,13 @@ class ProductController extends Controller
         foreach ($request->get("stores") as $store) {
             $product->stores()->save($product, ['store_id' => $store]);
         }
-        
-        return response()->json($product);
+
+        $status = response(new \Illuminate\Http\Response)->getStatusCode();
+
+        if ($status == 200) {
+            return response()->json(['success' => true]);
+        } else {
+            return response()->json();
+        }
     }
 }

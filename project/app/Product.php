@@ -18,7 +18,7 @@ class Product extends Model
     }
 
     public function stores() {
-        return $this->belongsToMany('App\Store');
+        return $this->belongsToMany('App\Store')->withTimestamps();
     }
     
     public function reviews() {
