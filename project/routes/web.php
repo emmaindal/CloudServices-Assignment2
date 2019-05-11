@@ -11,28 +11,10 @@
 |
 */
 
-$router->get('/products', function () use ($router) {
-    // return products
-    return "products";
-});
 
-$router->get('/products/{id}', function ($id) use ($router) {
-    // return specific product + detailed info (reviews and what stores that have it)
-    return "specific product $id";
-});
+$router->get('/products', 'ProductController@index');
+$router->get('/products/{id}', 'ProductController@show');
+$router->post('/products', 'ProductController@create');
 
-
-$router->post('/products', function () use ($router) {
-    // create product 
-    return "add product";
-});
-
-$router->get('/stores', function () use ($router) {
-    // return stores
-    return "stores";
-});
-
-$router->get('/reviews', function () use ($router) {
-    // return reviews
-    return "stores";
-});
+$router->get('/stores', 'StoreController@index');
+$router->get('/reviews', 'ReviewController@index');
